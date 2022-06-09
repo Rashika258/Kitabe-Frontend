@@ -1,3 +1,4 @@
+
 {% extends "mainapp/layout.html" %}
 {% load static %}
 
@@ -8,79 +9,16 @@ Explore
 
 {% block head %}
 <link rel="stylesheet" href="{% static 'mainapp/css/explore.css' %}">
-<!-- <link rel="stylesheet" href="{% static 'mainapp/css/tailwind.min.css' %}">  -->
-<!-- <link rel="stylesheet" href="{% static 'mainapp/css/bootstrap.min.css' %}"> -->
 {% endblock head %}
 
 
 {% block main %}
-<div class="container m-5 mx-auto">
-    <div class="row ">
-      <div class="col col-sm-12 col-lg-4 col-md-12 p-auto m-auto  ">
-        {% for book in book %}
-        <div class="card" style="width: 18rem;">
-            <img src="{{book.image_url}}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{ book.original_title|truncatechars:30 }}</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-      </div>
-      <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
-      data-book-id="{{ book.book_id }}">More Details</a>
-  {% if user.is_authenticated %}
-  <div class='rating-block' id='rating-block-{{ book.book_id }}' onmouseover="rateStart(this)"
-      onclick='rateBook(this)' onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
-      <div id='button-text-{{ book.book_id }}'>Rate <i class="fa fa-heart" style="color:red"></i> This
-          Book
-          </a>
-      </div>
-      <div class='rateYo' id='rate-{{ book.book_id }}'></div>
-  </div>
-  {% else %}
-  <div class='rating-block btn' onclick="location.href='{% url 'account_signup' %}'">
-      <div id='button-text'>Rate <i class="fa fa-heart" style="color:red"></i> This Book</a>
-      </div>
-  </div>
-  {% endif %}
-</div>
-{% if forloop.counter|divisibleby:"4"  %}
-</div>
-<div class="card  ">
-{% endif %}
-{% endfor %}
-</div>
-      <div class="col col-sm-12 col-lg-4 col-md-12 p-auto m-auto  ">
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'mainapp/png/frontbanner/7.webp' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">by {{ book.authors|truncatechars:25}}</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-      </div>
-      <div class="col col-sm-12 col-lg-4 col-md-12 p-auto m-auto  ">
-        <div class="card" style="width: 18rem;">
-            <img src="{% static 'mainapp/png/frontbanner/7.webp' %}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-      </div>
-      </div>
-    </div>
-  </div>
 
-
-<div class="large-screen" style="width:1200px; margin:0 auto;">
-    <div class="centre, card-deck">
+<div>
+    <div class="centre card-deck">
         {% for book in book %}
-        <div class="card col-sm-12 col-lg-3 " style="width: 300px;">
-            <div class="row no-gutters">
+        <div class="card col-sm-12 col-lg-3 " >
+            <div class="row">
                 <img class=" card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
                 
                 <div class="content text-center">
@@ -106,10 +44,10 @@ Explore
             </div>
             {% endif %}
         </div>
-        {% if forloop.counter|divisibleby:"4"  %}
+        <!-- {% if forloop.counter|divisibleby:"4"  %}
     </div>
     <div class="card-deck  ">
-        {% endif %}
+        {% endif %} -->
         {% endfor %}
     </div>
 </div>
@@ -118,7 +56,7 @@ Explore
 <div class="small-screen">
     <div id="demo" class="carousel slide" data-ride="carousel">
         <!------------------------------------- carousel first row -------------------------->
-        <div class=" carousel-inner " class="ml-auto">
+        <div class="carousel-inner " class="ml-auto">
             <div class="card-deck">
                 <div class="carousel-item active">
                     {% for book in book|slice:":50"%}

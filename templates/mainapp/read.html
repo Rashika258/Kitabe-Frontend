@@ -8,7 +8,16 @@
 {% endblock head %} 
 {% block main %}
 
-<h1 class="genre-head text-center pt-3 pb-3">Rated Books({{num}})</h1>
+<h1 style=" margin-top: 100px;" class="genre-head text-center pt-3 pb-3">Rated Books - {{num}}</h1>
+<div
+        style="width: 30%;
+          margin: auto;
+          margin-top: 30px;
+          margin-bottom: 10px;
+          border: 0;
+          height: 0;
+          box-shadow: 0 0 10px 1px #F77E21;"
+      ></div> 
 <div class="card-deck pb-3" style="margin:0 auto;">
 {% for book in page_obj %}
 
@@ -20,7 +29,7 @@
         <div class="text-center col-md-8">
             <div class="card-body">
                 <h5 class=" card-title">{{book.original_title}}</h5>
-                <p class=" card-text"><i>by {{book.authors}}</i></p>
+                <p class=" card-text"> {{book.authors}}</p>
                 <div class=" rating-block" id="rating-block-{{ book.book_id }}" onmouseover="rateStart(this)" onclick='rateBook(this)' onmouseout='finishRate(this)' data-book-id="{{ book.book_id }}">
                     <div id="button-text-{{ book.book_id }}">Rate <i class="fa fa-heart" style="color:red"></i> This Book
                     </div>

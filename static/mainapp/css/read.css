@@ -4,11 +4,14 @@
 
 .genre-head,
 .topbook-head {
-    font-family: "Lobster", cursive;
-    font-size: 300%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
     background-color: #d7722c;
-    margin-top: 0px;
+    /* margin-top: 15px; */
     color: white;
+    width: 55%;
+    margin: auto;
+    border-radius: 5px;
 }
 
 .card-img {
@@ -25,6 +28,7 @@
 }
 
 .card {
+    background-color: #354259;
     transition: 0.5s;
     cursor: pointer;
     border-radius: 3px;
@@ -34,18 +38,26 @@
 }
 
 .card-title {
-    font-family: "Sora", sans-serif;
-    font-size: 1.5rem;
-    color: #d7722c;
-    padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+    font-size: x-large;
+    color: #FBCB0A;
+    font-weight: bolder;
+    text-align: justify;
 }
 
 .card-text {
-    font-family: "Rockwell", serif;
-    color: black;
-    font-weight: bold;
-    font-size: 1 rem;
-    padding-bottom: 25px;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 18px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 .card::before,
@@ -78,30 +90,32 @@
 
 .more-details {
     text-align: center;
-    background-color: #3d348b;
+    background-color: #FF5D5D;
     color: #fff;
     font-weight: 600;
     font-size: 1rem;
     border-radius: 20px;
     margin-right: 20px;
     margin-left: 30px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .more-details:hover {
-    color: #3d348b;
+    color: #FF5D5D;
     background: white;
-    border: 2px solid #3d348b;
-    text-shadow: 1px 1px 3px #727ff0;
+    border: 2px solid #FF5D5D;
+    text-shadow: 1px 1px 3px #FF8C8C;
 }
 
 .rating-block {
     display: inline-block;
     text-align: center;
-    background-color: #31c2cf;
+    background-color: white;
     font-weight: 600;
     font-size: 1rem;
     border-radius: 20px;
     padding: 8px;
+    border: #7f818e;
 }
 
 .rating-block:hover {

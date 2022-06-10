@@ -19,6 +19,23 @@ def index(request):
     books = popular_among_users()
     return render(request, 'mainapp/index.html', {'books': books})
 
+@ensure_csrf_cookie
+def aboutPage(request):
+    '''
+        View to render AboutPage
+    '''
+  
+    return render(request, 'mainapp/about.html')
+
+
+@ensure_csrf_cookie
+def contactPage(request):
+    '''
+        View to render ContactPage
+    '''
+  
+    return render(request, 'mainapp/contact.html')
+
 
 @ensure_csrf_cookie
 def genre_books(request, genre):

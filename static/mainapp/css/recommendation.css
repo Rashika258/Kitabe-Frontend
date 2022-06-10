@@ -6,168 +6,147 @@
 }
 
 .heading {
-    font-family: "Lobster", cursive;
-    font-size: 300%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
     background-color: #d7722c;
-    margin-top: 0px;
+    /* margin-top: 15px; */
     color: white;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 50px;
 }
 
-.cover-img {
-    max-width: 100%;
-}
 
-.book-cell {
-    position: relative;
+.centre {
     display: flex;
-    padding: 25px;
-    width: 33.33%;
-    height: 250px;
-    background-color: #133050;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
 }
 
-.book-photo {
-    width: 180px;
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.card-img {
     flex-shrink: 0;
+    border: none;
     bottom: -35px;
     left: 35px;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: -2px 6px 19px 0px #7f818e;
     transition: 0.3s ease;
+    width: 280px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 0;
 }
 
-.book-photo:hover {
-    transform: scale(1.03);
+.card-img:hover {
+    transform: scale(1.07);
 }
 
-.book-img {
-    flex-shrink: 0;
+.card-body-wrap {
+    display: flex;
 }
 
-.book-title {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    color: #ffffff;
-    font-weight: 600;
-    font-size: larger;
+.card {
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #354259;
+    border: none;
+    border-radius: 5px;
+    padding-left: 0;
+    box-shadow: -2px 6px 19px 0px #7f818e;
 }
 
-.book-author {
-    margin-top: 3px;
+.card-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: x-large;
+    color: #FBCB0A;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.card-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF2F2;
+    font-weight: 300;
+    text-align: justify;
     font-size: 18px;
+    padding-bottom: 30px;
+    overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
-.book-content {
-    padding: 0 20px;
-    color: #ffffff;
-    overflow: hidden;
+.card::before,
+.card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    content: "";
+    pointer-events: none;
 }
 
-.book-voters {
-    color: #fff;
-    vertical-align: sub;
-    font-size: 18px;
-    margin-left: 7px;
-    white-space: nowrap;
-    margin-top: 7px;
+.card::before {
+    transform-origin: left top;
 }
 
-.book-see {
-    margin-top: 10px;
-    text-align: center;
-    background-color: #fff;
-    color: #d7722c;
-    font-weight: 600;
-    padding: 8px;
-    font-size: 14px;
-    width: 160px;
-    border-radius: 20px;
+.card::after {
+    transform-origin: right bottom;
 }
 
-.book-see:hover {
-    color: black;
-}
-
-@media (max-width: 1103px) {
-    .book-cell {
-        width: 60%;
-    }
-}
-
-@media (max-width: 765px) {
-    .book-cell {
-        width: 80%;
-    }
-}
-
-@media (max-width: 575px) {
-    .book-cell {
-        width: 100%;
-    }
-}
-
-@media (max-width: 458px) {
-    .book-photo {
-        width: 180px;
-    }
-}
-
-@media (max-width: 421px) {
-    .book-see {
-        width: 120px;
-        font-size: 13px;
-    }
-    .book-photo {
-        width: 130px;
-    }
-    .more-details {
-        font-size: 13px !important;
-        right: 22% !important;
-    }
-    .rating-block {
-        font-size: 13px !important;
-    }
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+    transform: scale3d(1, 1, 1);
 }
 
 .more-details {
     text-align: center;
-    background-color: #3d348b;
+    background-color: #FF5D5D;
     color: #fff;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 20px;
     position: absolute;
-    right: 26%;
-    margin-top: 20%;
-    bottom: 70px;
-    margin-right: -12px;
+    bottom: 10px;
+    right: 2%;
+    font-family: 'Raleway', sans-serif;
 }
 
 .more-details:hover {
-    color: #3d348b;
+    color: #FF5D5D;
     background: white;
-    border: 2px solid #3d348b;
-    text-shadow: 1px 1px 3px #727ff0;
+    border: 2px solid #FF5D5D;
+    text-shadow: 1px 1px 3px #FF8C8C;
 }
 
 .rating-block {
+    display: inline-block;
     text-align: center;
-    background-color: #31c2cf;
+    background-color: white;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 14px;
     border-radius: 20px;
-    padding: 8px;
-    bottom: 10px;
     position: absolute;
-    left: 50%;
-}
-
-.more-details {
-    padding-left: -2px;
+    bottom: 10px;
+    left: 4%;
+    padding: 8px;
+    font-family: 'Raleway', sans-serif;
+    border: #7f818e;
 }
 
 .rating-block:hover {
@@ -175,6 +154,57 @@
     transition: all 0.4s ease 0s;
 }
 
+.rating-block.btn,
+.btn.more-details {
+    padding: 8px;
+}
+
+.rating-block:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
+    background-color: #7f818e;
+}
+
 .rateYo {
     display: none;
+}
+
+.card-deck {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 600px) {
+    .card-text {
+        margin-bottom: 10px !important;
+    }
+    .rating-block {
+        left: 5%;
+        font-size: 12px;
+    }
+    .more-details {
+        right: 10px;
+        font-size: 12px;
+    }
+    .card-deck {
+        padding-right: 0;
+        padding-left: 8%;
+    }
+}
+
+@media (max-width: 390px) {
+    .card,
+    .card-deck {
+        margin-left: -1.5%;
+    }
 }

@@ -30,7 +30,7 @@
 <!-- ################### carousel 1   -->
 
 <section class="banner">
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div id="carousel-front" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             
             <div class="carousel-item active">
@@ -395,7 +395,7 @@
 /* preloader */
 $(window).on('load', function () {
         if (readCookie('referer') == null) {
-            $('.preloader-container').delay(700).fadeOut('slow');
+            $('.preloader-container').delay(1000).fadeOut('slow');
             createCookie('referer', 1, 0);
 
         }
@@ -430,13 +430,18 @@ $(window).on('load', function () {
     
     /* 2 carousel */
     $('#carousel-2').carousel({
-        interval: 6000,
+        interval: 1000,
         wrap: true,
         keyboard: true
     });
 
+    $('#carousel-front').carousel({
+        interval: 2000,
+        wrap: true,
+        keyboard: true
+    });
     $('#demo').carousel({
-        interval: 5000,
+        interval: 1000,
         wrap: true,
         keyboard: true
     });

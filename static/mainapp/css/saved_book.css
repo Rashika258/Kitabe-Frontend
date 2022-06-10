@@ -1,96 +1,144 @@
 .genre-head {
-    font-family: "Lobster", cursive;
-    font-size: 300%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 35px;
     background-color: #d7722c;
-    margin-top: 0px;
+    /* margin-top: 15px; */
     color: white;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 50px;
 }
 
-#sekil img {
-    padding-left: 10px;
-    margin-top: -60px;
-    width: 200px;
-    height: 260px;
-    box-shadow: 2px 2px 2px #9e9e9e;
-    -webkit-box-shadow: 5px 5px 3px #9e9e9e;
-    -moz-box-shadow: 3px 3px 1px #9e9e9e;
+
+.centre {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
 }
 
-.obsu {
-    margin-top: 70px;
-    width: 550px;
-    background-color: white;
-    border-radius: 10px;
-    margin-left: 6.5%;
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
 }
 
-#book_name {
-    margin-top: -190px;
-    padding-left: 220px;
-    font-family: "Sora", sans-serif;
-    font-size: 1.2rem;
-    color: #d7722c;
+.card-img {
+    flex-shrink: 0;
+    border: none;
+    bottom: -35px;
+    left: 35px;
+    border-radius: 5px;
+    box-shadow: -2px 6px 19px 0px #7f818e;
+    transition: 0.3s ease;
+    width: 280px;
+    height: 300px;
+    margin: 0 auto;
+    padding: 0;
 }
 
-#author_name {
-    padding-left: 220px;
-    font-family: "Rockwell", serif;
-    color: black;
-    font-weight: bold;
-    font-size: 1 rem;
-    padding-bottom: 25px;
-    padding-top: 9px;
+.card-img:hover {
+    transform: scale(1.07);
 }
 
-#content {
-    display: absolute;
+.card-body-wrap {
+    display: flex;
 }
 
-.remove {
-    margin-top: 10px;
-    background-color: red;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    border-radius: 20px;
-    color: #fff;
-    margin-left: 53%;
-    margin-bottom: 3%;
+.card {
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #354259;
+    border: none;
+    border-radius: 5px;
+    padding-left: 0;
+    box-shadow: -2px 6px 19px 0px #7f818e;
 }
 
-.remove:hover {
-    color: red;
-    background: white;
-    border: 2px solid red;
-    text-shadow: 1px 1px 3px #ffcccb;
+.card-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: x-large;
+    color: #FBCB0A;
+    font-weight: bolder;
+    text-align: justify;
+}
+
+.card-text {
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF2F2;
+    font-weight: 300;
+    text-align: justify;
+    font-size: 18px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+.card::before,
+.card::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform 0.3s ease-out 0s;
+    content: "";
+    pointer-events: none;
+}
+
+.card::before {
+    transform-origin: left top;
+}
+
+.card::after {
+    transform-origin: right bottom;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+    transform: scale3d(1, 1, 1);
 }
 
 .more-details {
-    margin-left: 40%;
     text-align: center;
-    background-color: #3d348b;
-    color: #fff;
+    background-color: #FBCB0A;
+    color: black;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 14px;
     border-radius: 20px;
-    margin-right: 20px;
+    position: absolute;
+    bottom: 10px;
+    right: 2%;
+    font-family: 'Raleway', sans-serif;
 }
 
 .more-details:hover {
-    color: #3d348b;
-    background: white;
-    border: 2px solid #3d348b;
-    text-shadow: 1px 1px 3px #727ff0;
+    color: white;
+    background: abdd06cf;
+    border: 2px solid #859c1e;
+    text-shadow: 1px 1px 3px #FF8C8C;
 }
 
 .rating-block {
     display: inline-block;
     text-align: center;
-    background-color: #31c2cf;
+    background-color: white;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 14px;
     border-radius: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 4%;
     padding: 8px;
+    font-family: 'Raleway', sans-serif;
+    border: #7f818e;
 }
 
 .rating-block:hover {
@@ -98,8 +146,52 @@
     transition: all 0.4s ease 0s;
 }
 
+.rating-block.btn,
+.btn.more-details {
+    padding: 8px;
+}
+
+.rating-block:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    transition: all 0.4s ease 0s;
+    background-color: #7f818e;
+}
+
 .rateYo {
     display: none;
+}
+.remove {
+    margin-top: 10px;
+    background-color: #FF5D5D;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 20px;
+    color: #fff;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    width: 250px;
+}
+
+.remove:hover {
+    color: #FF5D5D;
+    background: white;
+    border: 2px solid #FF5D5D;
+    text-shadow: 1px 1px 3px #FF8C8C;
+}
+.card-deck {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
 }
 
 .link {
@@ -121,34 +213,28 @@
     margin-top: 50px;
 }
 
+
 @media screen and (max-width: 600px) {
-    .obsu {
-        width: 323px;
-    }
-    #sekil img {
-        width: 160px;
-        height: 200px;
-    }
-    #book_name {
-        font-size: 18px;
-        padding-top: 22%;
-        padding-left: 54%;
-    }
-    #author_name {
-        padding-left: 54%;
-    }
-    .more-details {
-        font-size: 12px;
-        margin-left: 13%;
+    .card-text {
+        margin-bottom: 10px !important;
     }
     .rating-block {
+        left: 5%;
         font-size: 12px;
     }
-    .remove {
+    .more-details {
+        right: 10px;
         font-size: 12px;
-        margin-left: 28%;
     }
-    #content {
-        padding-top: 13%;
+    .card-deck {
+        padding-right: 0;
+        padding-left: 8%;
+    }
+}
+
+@media (max-width: 390px) {
+    .card,
+    .card-deck {
+        margin-left: -1.5%;
     }
 }

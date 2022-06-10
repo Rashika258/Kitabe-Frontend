@@ -15,15 +15,17 @@ Explore
 {% block main %}
 
 <div>
+   
     <div class="centre card-deck">
-        {% for book in book %}
-        <div class="card col-sm-12 col-lg-3 " >
+        
+        {% for book in book|slice:":40"%}
+        <div class="card col-sm-12 col-lg-3 " style="margin-bottom: 50px;" >
             <div class="row">
-                <img class=" card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
+                <img class="card-img  mt-4 " src="{{book.image_url}}" alt="book Card">
                 
-                <div class="content text-center">
-                    <div class="card-title">{{ book.original_title|truncatechars:30 }}</div>
-                    <div class="card-text">by {{ book.authors|truncatechars:25}}</div>
+                <div class="content">
+                    <div class="card-title">{{ book.original_title|truncatechars:50 }}</div>
+                    <div class="card-text">{{ book.authors|truncatechars:50}}</div>
                 </div>
             </div><br>
             <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
@@ -51,7 +53,15 @@ Explore
         {% endfor %}
     </div>
 </div>
-
+<div
+        style="width: 30%;
+          margin: auto;
+          margin-top: 5px;
+          margin-bottom: 10px;
+          border: 0;
+          height: 0;
+          box-shadow: 0 0 10px 1px #F77E21;"
+      ></div> 
 <!------------------------------------------- for small screens ------------------------------------------------------------------------>
 <div class="small-screen">
     <div id="demo" class="carousel slide" data-ride="carousel">
@@ -67,7 +77,7 @@ Explore
                             
                             <div class="card-body text-center">
                                 <div class="card-title">{{ book.original_title|truncatechars:30 }}</div>
-                                <div class="card-text">by {{ book.authors|truncatechars:30}}</div>
+                                <div class="card-text"> {{ book.authors|truncatechars:30}}</div>
                             </div>
                         </div><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
@@ -120,7 +130,7 @@ Explore
                             
                             <div class="card-body text-center">
                                 <div class="card-title">{{ book.original_title|truncatechars:30 }}</div>
-                                <div class="card-text">by {{ book.authors|truncatechars:30}}</div>
+                                <div class="card-text">{{ book.authors|truncatechars:30}}</div>
                             </div>
                         </div><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"
@@ -172,7 +182,7 @@ Explore
                             
                             <div class="card-body text-center">
                                 <div class="card-title">{{ book.original_title |truncatechars:30}}</div>
-                                <div class="card-text">by {{ book.authors|truncatechars:30}}</div>
+                                <div class="card-text"> {{ book.authors|truncatechars:30}}</div>
                             </div>
                         </div><br>
                         <a href="javascript:;" onclick='bookDetails(this)' class="btn more-details"

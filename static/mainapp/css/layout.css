@@ -9,6 +9,11 @@ body {
     overflow-x: hidden;
 }
 
+.dropdown-menu  > a:hover {
+    background-image: none;
+    background-color: red;
+}
+
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
@@ -62,21 +67,21 @@ body {
 
 /* nav bar css */
 
-.nav-item {
+/* .nav-item {
     display: flex !important;
     flex-direction: column !important;
-    align-items: center !important;
-    font-family: 'Lato', sans-serif;
-}
+    /* align-items: center !important; */
+    /* font-family: 'Lato', sans-serif;
+} */
 
-.navbrandimg {
+/* .navbrandimg {
     width: 94px;
-}
+} */
 
 .navbar-toggler {
     border-color: black;
     background-color: white;
-}
+} */
 
 .img-book {
     height: 200px !important;
